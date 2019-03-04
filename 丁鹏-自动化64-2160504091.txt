@@ -1,0 +1,15 @@
+close all;clear all;clc;
+I1=imread('Image A.jpg');
+X1=rgb2gray(I1);
+I2=imread('Image B.jpg');
+X2=rgb2gray(I2);
+cpselect(I2,I1);
+tform = cp2tform(movingPoints,fixedPoints,'affine');
+I_out = imtransform(I2,tform);
+figure
+subplot(1,2,1)
+imshow(I1);
+title('²Î¿¼Í¼Ïñ');
+subplot(1,2,2)
+imshow(I_out);
+title('Åä×¼Í¼Ïñ');
