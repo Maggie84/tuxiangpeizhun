@@ -1,0 +1,8 @@
+I = imread('Image A.jpg'); 
+B= imread('Image B.jpg'); 
+cpselect(I,B);
+tform=cp2tform(movingPoints,fixedPoints,'affine'); 
+Iout=imtransform(I,tform); 
+subplot(1,2,1),imshow(Iout); 
+subplot(1,2,2),imshow(B); 
+tform.tdata.T
